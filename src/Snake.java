@@ -16,6 +16,7 @@ public class Snake {
         Game game = new Game(Width,Height);
         Frame.add(game);
         Frame.pack();
+        game.requestFocus();
         Frame.setVisible(true);
 
     }
