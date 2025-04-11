@@ -44,7 +44,7 @@ public class Game extends JPanel implements ActionListener, KeyListener{
         this.GameBoardHeight = GameBoardHeight;
         setPreferredSize(new Dimension(this.GameBoardWidth,this.GameBoardHeight));
 
-        backgroundImage = new ImageIcon("Image/Background copy.png").getImage();
+        backgroundImage = new ImageIcon(getClass().getResource("/Image/Background copy.png")).getImage();
 
         addKeyListener(this);
         setFocusable(true);
