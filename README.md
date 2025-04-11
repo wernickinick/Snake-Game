@@ -1,4 +1,10 @@
 # 🐍 Java Snake Game
+![91845F79-3E1E-4AF9-8279-3C32CA598E89 copy](https://github.com/user-attachments/assets/8c8cf91f-12f8-4e8b-a987-f19b30ecf21c)
+
+
+
+
+
 
 A classic Snake game built in Java. This project is a great starting point for learning Java-based game development with simple mechanics and real-time interaction.
 
