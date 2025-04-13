@@ -16,18 +16,19 @@ public class Snake {
         Frame.setResizable(false);
 
         Game game = new Game(Width,Height);
-        Menu menu = new Menu();
+        //Menu menu = new Menu();
         Frame.add(game);
         Frame.pack();
         game.requestFocus();
         Frame.setVisible(true);
 
-        JFrame MainMenu = new JFrame("MENU");
+        JPanel MainMenu = new JPanel();
         MainMenu.setBounds(0, 0, 600, 600);
         MainMenu.setLayout(null);
-        MainMenu.setLocationRelativeTo(null);
+        //MainMenu.setLocationRelativeTo(null);
         MainMenu.setFocusable(true);
         MainMenu.setVisible(true);
+        Frame.add(MainMenu);
 
         JButton start = new JButton("Start");
         start.setBounds(200,200,200,50);
@@ -36,27 +37,27 @@ public class Snake {
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Frame.setVisible(true);
+                game.setVisible(true);
                 MainMenu.setVisible(false);
+                if(game.GameOver)
+                {
+                    MainMenu.setVisible(true);
+                    game.setVisible(false);
+                    System.out.println("YAYYy");
+                }
             }
         });
 
-
-//        if(!game.GameOver)
-//        {
-//            Frame.setVisible(false);
-//        }
+        if (game.GameLoop != null)
+        {
+            MainMenu.setVisible(true);
+            game.setVisible(false);
+            System.out.println("Svxcvxcvuccess");
+        }
 
         if(!game.GameOver)
         {
-            MainMenu.setVisible(true);
-            Frame.setVisible(false);
-            System.out.println("Svxcvxcvuccess");
-        }
-        else if (game.GameOver){
-            MainMenu.setVisible(true);
-            Frame.setVisible(false);
-            System.out.println("Success");
+            game.setVisible(false);
         }
 
 

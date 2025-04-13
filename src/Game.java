@@ -21,6 +21,7 @@ public class Game extends JPanel implements ActionListener, KeyListener{
     int GameBoardWidth;
     int GameBoardHeight;
     int TileSize = 25;
+    int Check = 1;
 
     //Snake
     Tile Snakehead;
@@ -61,6 +62,7 @@ public class Game extends JPanel implements ActionListener, KeyListener{
 
         GameLoop = new Timer(100, this);
         GameLoop.start();
+        repaint();
 
     }
     public void paintComponent(Graphics g)
@@ -168,8 +170,26 @@ public class Game extends JPanel implements ActionListener, KeyListener{
         if(GameOver)
         {
             GameLoop.stop();
-            //Menu menu = new Menu();
-            super.repaint();
+            Check = 2;
+//            JFrame menu = new JFrame("New Menu");
+//            menu.setBounds(0,0,600,600);
+//            menu.setLayout(null);
+//            menu.setLocationRelativeTo(null);
+//            menu.setFocusable(true);
+//            menu.setVisible(true);
+//
+//            JButton start = new JButton("Start");
+//            start.setBounds(200,200,200,50);
+//            menu.add(start);
+//
+//            start.addActionListener(new ActionListener() {
+//                @Override
+//                public void actionPerformed(ActionEvent e) {
+//                    menu.setVisible(false);
+//                    repaint();
+//                }
+//            });
+           // super.repaint();
         }
 
     }
