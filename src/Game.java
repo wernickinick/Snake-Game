@@ -168,6 +168,8 @@ public class Game extends JPanel implements ActionListener, KeyListener{
         if(GameOver)
         {
             GameLoop.stop();
+            //Menu menu = new Menu();
+            super.repaint();
         }
 
     }
