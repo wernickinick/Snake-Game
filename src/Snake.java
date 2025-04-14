@@ -18,6 +18,6 @@ public class Snake {
         Frame.pack();
         game.requestFocus();
         Frame.setVisible(true);
-//reverted back to orginal state
+
     }
 }
