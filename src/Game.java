@@ -21,10 +21,6 @@ public class Game extends JPanel implements ActionListener, KeyListener{
     int GameBoardWidth;
     int GameBoardHeight;
     int TileSize = 25;
-    int Check = 1;
-    interface GameoverListener {
-        void onGameover();
-    }
 
     //Snake
     Tile Snakehead;
@@ -39,11 +35,6 @@ public class Game extends JPanel implements ActionListener, KeyListener{
     int VelocityX;
     int VelocityY;
     boolean GameOver = false;
-    private GameoverListener gameoverListener;
-    public void setGameoverListener(GameoverListener listener)
-    {
-        this.gameoverListener = listener;
-    }
 
     private Image backgroundImage;
 
@@ -70,7 +61,6 @@ public class Game extends JPanel implements ActionListener, KeyListener{
 
         GameLoop = new Timer(100, this);
         GameLoop.start();
-        repaint();
 
     }
     public void paintComponent(Graphics g)
@@ -165,7 +155,7 @@ public class Game extends JPanel implements ActionListener, KeyListener{
         }
 
         if(Snakehead.x * TileSize < 0 || Snakehead.x * TileSize > GameBoardWidth  ||
-        Snakehead.y * TileSize < 0 || Snakehead.y * TileSize > GameBoardHeight)
+                Snakehead.y * TileSize < 0 || Snakehead.y * TileSize > GameBoardHeight)
         {
             GameOver = true;
         }
@@ -178,31 +168,6 @@ public class Game extends JPanel implements ActionListener, KeyListener{
         if(GameOver)
         {
             GameLoop.stop();
-            this.Check = 2;
-            if(gameoverListener != null)
-            {
-                gameoverListener.onGameover();
-            }
-
-//            JFrame menu = new JFrame("New Menu");
-//            menu.setBounds(0,0,600,600);
-//            menu.setLayout(null);
-//            menu.setLocationRelativeTo(null);
-//            menu.setFocusable(true);
-//            menu.setVisible(true);
-//
-//            JButton start = new JButton("Start");
-//            start.setBounds(200,200,200,50);
-//            menu.add(start);
-//
-//            start.addActionListener(new ActionListener() {
-//                @Override
-//                public void actionPerformed(ActionEvent e) {
-//                    menu.setVisible(false);
-//                    repaint();
-//                }
-//            });
-           // super.repaint();
         }
 
     }
