@@ -39,12 +39,7 @@ public class Snake {
             public void actionPerformed(ActionEvent e) {
                 game.setVisible(true);
                 MainMenu.setVisible(false);
-                if(game.GameOver)
-                {
-                    MainMenu.setVisible(true);
-                    game.setVisible(false);
-                    System.out.println("YAYYy");
-                }
+                System.out.println("Menu Gone");
             }
         });
 
@@ -55,11 +50,12 @@ public class Snake {
             System.out.println("Svxcvxcvuccess");
         }
 
-        if(!game.GameOver)
-        {
-            game.setVisible(false);
-        }
-
-
+        game.setGameoverListener(() -> {
+            SwingUtilities.invokeLater(() -> {
+                MainMenu.setVisible(true);
+                game.setVisible(false);
+                System.out.println("Game Over: Menu shown again");
+            });
+        });
     }
 }
